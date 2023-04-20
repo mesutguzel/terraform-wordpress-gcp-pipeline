@@ -18,6 +18,16 @@ resource "google_compute_subnetwork" "proxy" {
   network       = google_compute_network.vpc_network.id
   purpose       = "REGIONAL_MANAGED_PROXY"
   role          = "ACTIVE"
+  secondary_ip_range {
+    range_name    = "tf-test-secondary-range-update1"
+    ip_cidr_range = "192.168.10.0/24"
+  }
+  enable_flow_logs = true
+  log_config {
+    aggregation_interval = "INTERVAL_10_MIN"
+    flow_sampling        = 0.5
+    metadata             = "INCLUDE_ALL_METADATA"
+  }
 }
 
 resource "google_compute_region_target_http_proxy" "default" {
