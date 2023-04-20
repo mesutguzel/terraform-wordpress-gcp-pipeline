@@ -1,6 +1,6 @@
 steps:
 - id: 'tfsec'
-  name: 'hashicorp/terraform:1.0.0'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
   args: 
   - '-c'
