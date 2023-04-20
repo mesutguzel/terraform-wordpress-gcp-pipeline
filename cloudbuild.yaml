@@ -5,6 +5,7 @@ steps:
   args: 
   - '-c'
   - | 
+        curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash  
         tfsec .
 - id: 'tf init'
   name: 'hashicorp/terraform:1.0.0'
