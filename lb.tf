@@ -22,7 +22,7 @@ resource "google_compute_subnetwork" "proxy" {
     range_name    = "tf-test-secondary-range-update1"
     ip_cidr_range = "192.168.10.0/24"
   }
-  enable_flow_logs = true
+  
   log_config {
     aggregation_interval = "INTERVAL_10_MIN"
     flow_sampling        = 0.5
